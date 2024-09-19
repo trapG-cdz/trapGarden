@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAPGARDEN Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ADD8E6; /* Baby blue */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: black; /* Black font color */
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 18px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            font-size: 24px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="form-container">
+        <h1>TRAPGARDEN</h1>
+        <form id="trapgarden-form" action="/submit" method="POST">
+            <div class="form-group">
+                <label for="field1">Text Field 1:</label>
+                <input type="text" id="field1" name="field1" placeholder="Enter text here" required>
+            </div>
+            <div class="form-group">
+                <label for="field2">Text Field 2:</label>
+                <input type="text" id="field2" name="field2" placeholder="Enter more text here" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="thank-you-message" class="message" style="display: none;">
+            Thanks for your entry
+        </div>
+    </div>
+
+    <script>
+        // Handle form submission and display thank you message after submission
+        const form = document.getElementById('trapgarden-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Simulate a form submission (use AJAX or other methods if necessary)
+            setTimeout(() => {
+                // Hide form and show thank you message
+                document.getElementById('form-container').innerHTML = 
+                    <div class="message">Thanks for your entry</div>
+                ;
+            }, 1000); // Simulate a short delay before showing the message
+        });
+    </script>
+
+</body>
+</html>
